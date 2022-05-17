@@ -13,23 +13,22 @@
     <!-- Navbar-->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
-            <a href="#" class="navbar-brand">BlogWeb</a>
+            <a href="index.php" class="navbar-brand">BlogWeb</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="/PhpProject/admin/insert_post.html" class="nav-link">What you'll learn</a>
+                        <a href="/PhpProject/admin/insert_post.html" class="nav-link">Post a blog</a>
                     </li>
                     <li class="nav-item">
-                        <a href="altceva.html" class="nav-link">Login</a>
+                        <a href="login.php" class="nav-link">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#learn" class="nav-link">Register</a>
+                        <a href="register.html" class="nav-link">Register</a>
                     </li>
                 </ul>
             </div>
         </div>
-        
     </nav>
 
     <!--Showcase-->
@@ -176,25 +175,28 @@
      
 
     <section class="section bg-dark text-light">
-      <!-- Footer -->
       <footer class="section bg-dark text-light text-center mb-lg-0">
-        <!-- Grid container -->
         <div class="container p-4">
-          <!--Grid row-->
-          <div class="row">
-            <!--Grid column-->
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Footer Content</h5>
+          <div class="d-flex justify-content-center row">
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Informations</h5>
     
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
-                aliquam voluptatem veniam, est atque cumque eum delectus sint!
-              </p>
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Contact</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">About us</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Terms and conditions</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Cookie Usage Policy</a>
+                </li>
+              </ul>
             </div>
-            <!--Grid column-->
     
-            <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
               <h5 class="text-uppercase">Links</h5>
     
@@ -217,14 +219,12 @@
         </div>
        
     
-        <!-- Copyright -->
+     
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
           © 2020 Copyright:
           <a class="text-white" href="#">WebBlog.com</a>
-        </div>
-        <!-- Copyright -->
+      
       </footer>
-      <!-- Footer -->
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="script.js"></script>

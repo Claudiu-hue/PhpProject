@@ -19,3 +19,11 @@ function readMore(btn) {
      post.querySelector(".more").classList.toggle("hide");
      btn.textContent == "Read more" ? btn.textContent='Read less' : btn.textContent="Read more"; 
 }
+
+
+let user = {
+    name: "John",
+    age: 30,
+  }
+
+  console.log(user)
