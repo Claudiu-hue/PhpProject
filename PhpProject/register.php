@@ -1,31 +1,26 @@
 <?php
+
     @include 'config.php';
-    session_start();
-     
-     if(isset($_POST['submit'])){
+    if(isset($_POST['submit'])){
         $email = $_POST['email'];
+        $name = $_POST['name'];
         $password = $_POST['password'];
         $user_type = $_POST['user_type'];
-        $query = "SELECT * FROM author WHERE email = '$email' AND password= '$password'";
-        $result = mysqli_query($db, $query); // should be 1 row
-        if(mysqli_num_rows($result) > 0){
-            
-            $row = mysqli_fetch_array($result);
-            if($row['user_type'] == 'admin'){
-                $_SESSION['admin_name'] = $row['name'];
-                header('Location:http://localhost/PhpProject/admin/php/admin_page.php');
-            }
-            else
-                if($row['user_type'] == 'user' || $row['user_type'] =='admin'){
-                    $_SESSION['user_name'] = $row['name'];
-                    header('Location:http://localhost/PhpProject/user/user_page.php');
-            }
+
+        $select = "SELECT * FROM author WHERE email = '$email' && password = '$password' ";
+        $result = mysqli_query($db, $select);
+
+        if(mysqli_num_rows($result) > 0 ){
+
+            $error[] = 'User already exist! ';
         }
-        else
-        {
-            $error[] = 'Incorect email or password';
+        else {
+            $query = "INSERT INTO author (name, email, password, user_type) VALUES ('$name', '$email', '$password' , '$user_type')";
+            mysqli_query($db, $query); // should be 1 row
+            header("Location: http://localhost/PhpProject/login.php");
         }
-}
+      
+    };
 
 ?>
 
@@ -35,7 +30,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
@@ -55,7 +50,7 @@
                         <a href="register.php" class="nav-link">Register</a>
                     </li>';
 
-                        
+                        session_start();
                         if(isset($_SESSION['admin_name'])){
                             echo '<li class="nav-item">
                             <a href="./admin/insert_post.php" class="nav-link">Insert a post</a>
@@ -85,7 +80,7 @@
     </nav>
 
     <div class="login_container">
-        <form action="" method="POST"  class="login_form" style="height:400px ;">
+        <form action="http://localhost/PhpProject/register.php" method="POST" class="login_form">
 
             <?php
                 
@@ -97,16 +92,24 @@
 
             ?> 
 
+
             <div class="sub_login_container">
-                <label for="username" id="username">Email:</label><br>
-                <input type="text" id="input" name="email" required ><br>
-                <label for="password" id="password">Password:</label><br>
-                <input type="password" id="input" name="password"><br><br>
-                <button type="submit" name="submit" id="submit">Submit</button>
-                <p>dont have an account? <a href="register.php">register now</a></p>
+                <label for="nam" id="username">Username:</label><br>
+                <input type="text" id="input" name="name" required><br>
+                <label for="pass" id="password">Password:</label><br>
+                <input type="password" id="input" name="password" required><br>
+                <label for="em" id="username">Email:</label><br>
+                <input type="email" id="input" name="email" required><br><br>
+                <select name="user_type">
+                    <option value="user">user</option>
+                    <option value="admin">admin</option>
+                </select>
+                 <button type="submit" name="submit" id="submit" style="margin-top:20px ;">Submit</button>
+                 <p>already have an account? <a href="./login.php">Login</a></p>
             </div>
         </form>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

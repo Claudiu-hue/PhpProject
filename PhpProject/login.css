@@ -18,8 +18,9 @@
 }
 
 .login_form {
+    position: relative;
    width: 500px;
-   height: 350px;
+   height: 500px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -40,6 +41,7 @@
 
 #input {
     margin-bottom: 20px;
+    width: 100%;
 }
 
 #submit {
@@ -48,4 +50,19 @@
     color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity));;
     background-color: #0d6efd;
     border-color: #0d6efd;
+    display: block;
+    
 }
+
+.sub_login_container p {
+    margin-top: 20px;
+    color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity));
+}
+
+span.error-msg  {
+    position: absolute;
+    top: 10px;
+    color:crimson;
+
+}
+

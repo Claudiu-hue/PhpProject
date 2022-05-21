@@ -9,6 +9,7 @@
     // $mysqli = new mysqli("localhost", "claudiu", "starcraft2", "blog");
     // $stmt = $mysqli->prepare("INSERT INTO post (title, seo_title, content, author) VALUES ('$title','$seo', '$content', '$author')");
     // $stmt->execute();
+    
     $db = mysqli_connect("localhost", "claudiu", "starcraft2", "blog");
     $query = "INSERT INTO post (title, seo_title, content, author) VALUES ('$title', '$seo' , '$content' , '$autor')";
     mysqli_query($db, $query);

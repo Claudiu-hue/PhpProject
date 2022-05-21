@@ -17,15 +17,41 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="/PhpProject/admin/insert_post.html" class="nav-link">Post a blog</a>
-                    </li>
-                    <li class="nav-item">
+                  
+                  
+                    
+                    <?php
+                        
+                        echo '<li class="nav-item">
+                        <a href="register.php" class="nav-link">Register</a>
+                    </li>';
+
+                        session_start();
+                        if(isset($_SESSION['admin_name'])){
+
+                          echo '<li class="nav-item">
+                          <a href="./admin/insert_post.php" class="nav-link">Insert a post</a>
+                          </li>';
+
+                          echo '<li class="nav-item">
+                        <a href="logout.php" class="nav-link">Logout</a>
+                        </li>';
+                          
+                      }
+                      else
+                        if(isset($_SESSION['user_name'])){
+                          echo '<li class="nav-item">
+                          <a href="logout.php" class="nav-link">Logout</a>
+                          </li>';
+                      }
+                      else{
+
+                        echo ' <li class="nav-item">
                         <a href="login.php" class="nav-link">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="register.html" class="nav-link">Register</a>
-                    </li>
+                        </li>';
+                      } 
+                    ?>
+                    
                 </ul>
             </div>
         </div>
