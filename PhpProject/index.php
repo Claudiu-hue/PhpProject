@@ -141,9 +141,15 @@
     <?php
 
       require_once("./php/getPosts.php");
+      require("./php/detelePosts.php");
       getMainPosts();
+      
+      
+      if(isset($_SESSION['admin_name'])){
+        deletePosts();
+      }
 
-?>
+    ?>
       
       <div class="blog-card-group">
         <div class="blog-card">

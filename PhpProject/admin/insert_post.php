@@ -67,7 +67,6 @@ if(!isset($_SESSION['admin_name'])){
         <div class="content container bg-dark text-light">
             <div>
                 <form action="http://localhost/PhpProject/admin/php/insert_post.php" method="POST" class="col-md-6">
-                    <input type="hidden" name="author" value="1">
                     <div class="form-group row mt-5">
                         <label for="Email" class="col-sm-2 col-form-label">Title</label>
                         <div class="col-sm-10">
@@ -78,12 +77,6 @@ if(!isset($_SESSION['admin_name'])){
                         <label for="Name" class="col-sm-2 col-form-label">Seo Title</label>
                         <div class="col-sm-10">
                             <input type="text" name="seo" class="form-control" id="Name">
-                        </div>
-                    </div>
-                    <div class="form-group row mt-3">
-                        <label for="Subject" class="col-sm-2 col-form-label">Category</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="category" class="form-control" id="Subject">
                         </div>
                     </div>
                     <div class="form-group row mt-3">

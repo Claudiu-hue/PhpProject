@@ -2,10 +2,13 @@
 
 
 function getMainPosts() {
+    
     $db = mysqli_connect("localhost", "claudiu", "starcraft2", "blog");
     $query = "SELECT * FROM post ORDER BY date DESC LIMIT 20";
     $result = mysqli_query($db, $query);
     while($row = mysqli_fetch_array($result)){
+
+        
         echo '
             <div class="blog-card">
                     <div class="blog-card-banner">
@@ -21,11 +24,23 @@ function getMainPosts() {
                         <p class="blog-text">'.$row['content'].'</p>
 
                         <p>'.$row['date'].'</p>
+                       
+                       <a href="./index.php?id='.$row['id'].'" style="padding:10px; border-radius:10px; color:#fff; background-color:#dc3545; border-color:#0d6efd; margin:10px;" class="btn">Delete</a>
+                         
                     
                     </div>
             </div>
         ';
+
+
+        
+
+       
+
+
     }
+    
+    
 }
 
 
